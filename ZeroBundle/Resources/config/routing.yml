@@ -1,0 +1,3 @@
+zero_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ZeroBundle:Default:index }
