@@ -1,0 +1,23 @@
+{% import "TopxiaWebBundle::macro.html.twig" as web_macro %}
+<div class="es-box status-side">
+  <h2>{{ config.title|default(config.defaultTitle) }}</h2>
+  
+  {% set learns = data('LatestStatuses', {mode:'simple', count: config.count,private:0}) %}
+  {% if learns %}
+  <ul class="media-list">
+    {% for learn in learns %}
+
+        <li class="media">
+          {{ web_macro.user_avatar(learn.user,'pull-left','img-circle media-objec',true) }}
+          <div class="media-body">
+            {{ web_macro.user_link(learn.user) }}
+            {{ learn.message|raw }}
+           </div>
+        </li>
+
+    {% endfor %}
+  </ul>
+  {% else %}
+         <div class="empty">还没有动态</div>
+  {% endif %}
+</div>

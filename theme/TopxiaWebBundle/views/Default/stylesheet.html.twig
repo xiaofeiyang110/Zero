@@ -1,0 +1,18 @@
+{% if isEditColor %}
+	{% set color = config.config.color|default('default') %}
+{% else %}
+	{% set color = config.confirmConfig.color|default('default') %}
+{% endif %}
+
+
+<link href="{{ asset('assets/v2/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
+<link rel="stylesheet" media="screen" href="{{ asset('assets/css/common.css') }}" />
+<link rel="stylesheet" media="screen" href="{{ asset('assets/css/font-awesome.min.css') }}" />
+<link rel="stylesheet" media="screen" href="{{ asset('assets/v2/css/es-icon.css') }}" />
+<link rel="stylesheet" media="screen" href="{{ asset('assets/v2/css/main.css') }}" />
+
+{% if color == 'default' %}
+  <link rel="stylesheet" media="screen" href="{{ asset('themes/graceful/css/graceful.css') }}" />
+{% else %}
+  <link rel="stylesheet" media="screen" href="{{ asset('themes/graceful/css/graceful-' ~ color ~ '.css') }}" />
+{% endif %}

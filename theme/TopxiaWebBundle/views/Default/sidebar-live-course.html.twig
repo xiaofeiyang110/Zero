@@ -1,0 +1,31 @@
+{# 直播课 #}
+{% set count = config.count %}
+{% set courses = data('RecentLiveCourses',{'count':count}) %}
+  <div class="es-box zhibo-side">
+    <h2>{{ config.title|default(config.defaultTitle) }}</h2>
+    <div id="zhibo-list" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+      {% if courses %}
+        <ul class="course-row-list item active" data-role="pager-list">
+          {% for zhibo in courses %}
+            <li>
+              <a href="{{ path('course_show', {id:zhibo.id}) }}">
+                <span class="num-warn">{{ loop.index }}</span>
+                <h3>{{ zhibo.lesson.title|plain_text(15) }}</h3>
+                     
+                <p>{{ zhibo.lesson.startTime|date('n月j日') }} {{ zhibo.lesson.startTime|date('H:i') }} -  {{ zhibo.lesson.endTime|date('H:i') }} 
+                  {% set lesson = zhibo['lesson']|default(null) %}
+                  {% if lesson and "now"|date("U") >= lesson.startTime and "now"|date("U") <= lesson.endTime %}
+                    <span>直播中</span>
+                  {% endif %}
+                 </p>
+               </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %} 
+        <div class="empty">还没有设置课程</div>
+      {% endif %} 
+      </div>
+    </div>
+  </div>

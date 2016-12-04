@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__.'/BaseInstallScript.php';
+use Symfony\Component\Filesystem\Filesystem;
 
 class InstallScript extends BaseInstallScript
 {
@@ -17,6 +18,26 @@ class InstallScript extends BaseInstallScript
             PRIMARY KEY (`id`)
           ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
         ");*/
+        $this->installTheme();
+    }
+
+    private function installTheme()
+    {
+        $rootDir = realpath($this->kernel->getParameter('kernel.root_dir') . '/../');
+
+        $originDir = "{$rootDir}/plugins/Zero/theme";
+        $targetDir = "{$rootDir}/web/themes/Zero";
+
+        $filesystem = new Filesystem();
+        if ($filesystem->exists($targetDir)) {
+            $filesystem->remove($targetDir);
+        }
+
+        if ($this->installMode == 'command') {
+            $filesystem->symlink($originDir, $targetDir, true);
+        } else {
+            $filesystem->mirror($originDir, $targetDir, null, array('override' => true, 'delete' => true));
+        }
     }
 
 }

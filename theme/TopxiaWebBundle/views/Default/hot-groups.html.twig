@@ -1,0 +1,28 @@
+<div class="es-box">
+  <h2>{{ config.title|default(config.defaultTitle) }}</h2><a href="{{path('group_search_group')}}" class="more">更多&gt;</a>
+{# {{ render(controller('TopxiaWebBundle:Group:hotGroup',{count:config.count,colNum:4})) }} #}
+	
+	{% set groups = data('HotGroup',{'count':6}) %}
+  {% if groups %}
+    {% for group in groups %}
+
+      <div class="media media-group col-md-12">
+        <div class="media-left">
+          <a href="{{path('group_show',{id:group.id})}}" title="{{group.title}}">
+            <img class="avatar-square-md" src="{{filepath(group.logo, 'group.png')}}" alt="{{group.title}}">
+          </a>
+        </div>
+        <div class="media-body">
+          <div class="title"><a  class="link-light" href="{{path('group_show',{id:group.id})}}" title="{{group.title}}">{{group.title|sub_text(10)}}</a></div>
+          <div class="metas">
+            {{group.memberNum}}个成员&nbsp;
+            {{group.threadNum}}个话题
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty">暂无小组信息！</div>
+  {% endif %}
+</div>
+

@@ -1,0 +1,32 @@
+{# 付费精品课 #}
+<div class="es-box">
+  <h2>{{ config.title|default(config.defaultTitle) }}</h2>
+  {% set courses = data('PopularCourses',{'type':'studentNum','count':config.count,price:true}) %}
+
+  <div id="kechen-list" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% if courses %}
+        <ul class="course-row-list item active">
+          {% for course in courses %}
+            <li>
+              <a href="{{ path('course_show', {id:course.id}) }}">
+                <span class="num-warn">{{ loop.index }}</span>
+                <div>
+                  <h3>{{ course.title|plain_text(15) }}</h3>
+                   <p>
+                    {% if setting('course.show_student_num_enabled', '1') == 1  %}
+                      {{ course.studentNum }}人报名
+                    {% endif %} 
+                    {% include "TopxiaWebBundle:Course:price-widget.html.twig" with {shows: ['price']} %}
+                  </p>
+                </div>
+              </a>
+            </li>           
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="empty">还没有发布的课程</div>
+      {% endif %}  
+    </div>
+  </div>
+</div>

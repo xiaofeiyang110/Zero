@@ -1,0 +1,92 @@
+<!-- header -->
+<div class="navbar site-navbar one-nav" id="site-navbar"  data-counter-url="{{ path('user_remind_counter') }}">
+  <div class="container">
+    <div class="container-gap">
+      <div class="navbar-header clearfix">
+        
+        <!-- btn-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="iconfont  icon-nanrentouxiang"></span>
+        </button>
+    
+        <!-- btn-->
+        <div class="menu-btn">
+          <span class="iconfont icon-menu"></span>
+        </div>
+
+        <!-- logo -->
+        {% if setting('site.logo') %}
+          <a class="navbar-brand-logo" href="{{ path('homepage') }}"><img src="{{ asset(setting('site.logo')) }}"></a>
+        {% else %}
+          <a class="navbar-brand-logo" href="{{ path('homepage') }}">{{ setting('site.name', 'EDUSOHO') }}</a>
+        {% endif %}
+
+        {# search form #}
+        <form class="navbar-form navbar-left hidden-sm hidden-xs clearfix" role="search" action="/search">
+          <div class="form-group">
+            <input type="search" class="form-control" placeholder="请输入感兴趣的课程名" name="q">
+          </div>
+          <button type="submit" class="btn"><span class="iconfont  icon-sousuo1"></span></button>
+        </form>
+
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+            {% if app.user %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img class="img-circle" src="{{ filepath(app.user.smallAvatar, 'avatar.png') }}">
+
+                <p>我</p>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('user_show', {id:app.user.id}) }}"><i class="glyphicon glyphicon-home"></i> 我的主页</a></li>
+                <li><a href="{{ path('settings') }}"><i class="glyphicon glyphicon-cog"></i> 个人设置</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="{{ path('admin') }}"><i class="glyphicon glyphicon-lock"></i> 管理后台</a></li>
+                {% endif %}
+                <li><a href="{{ path('logout') }}"><i class="glyphicon glyphicon-off"></i> 退出</a></li>
+              </ul>
+            </li>
+            
+            <li>
+              <a href="{% if setting('coin.coin_enabled') %}
+                  {{path('my_coin')}}
+                 {% else %}
+                  {{path('my_bill')}}
+                 {% endif %}">
+                  <span class="iconfont icon-qianbao"></span><p>账户</p>
+               </a>
+            </li>
+
+            <li><a href="{{ path('my') }}"> <span class="iconfont icon-iconbook"></span><p>课程</p></a></li>
+           <li>
+            <a href="{{ path('message') }}" class="badge-container message-badge-container">
+              <span class="iconfont  icon-email"></span>
+              <p>私信</p>
+              {% if app.user.newMessageNum > 0 %}<i class="badge">{{ app.user.newMessageNum }}</i>{% endif %}
+            </a>
+            </li>
+
+            <li>
+              <a href="{{ path('notification') }}" class="badge-container notification-badge-container">
+              <span class="iconfont icon-wushenglaba"></span>
+             <p>通知</p>
+              {% if app.user.newNotificationNum > 0 %}<i class="badge">{{ app.user.newNotificationNum }}</i>{% endif %}</a>
+            </li>
+
+           {% else %}
+            <li><a href="{{ path('login', {goto:_target_path|default(app.request.server.get('REQUEST_URI'))}) }}"> <span class="iconfont icon-login"></span><p>登录</p></a></li>
+            <li><a href="{{ path('register', {goto:_target_path|default(app.request.server.get('REQUEST_URI'))}) }}"> <span class="iconfont icon-zhuce"></span><p>注册</p></a></li>
+          {% endif %}
+        </ul>
+      </div><!--/.navbar-collapse end -->
+    </div>
+  </div>{# container #}
+  <div class="menu-sec">
+    <div class="container">
+      {{ render(controller('TopxiaWebBundle:Default:topNavigation', {siteNav:siteNav|default(null)})) }}
+    </div>
+  </div>     
+</div>{#   header end #}

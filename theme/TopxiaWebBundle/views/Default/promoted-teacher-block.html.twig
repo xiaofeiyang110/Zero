@@ -1,0 +1,21 @@
+{% import "TopxiaWebBundle::macro.html.twig" as web_macro %}
+{% set teacher = data('PromotedTeacher',{'count':1}) %}
+
+<div class="es-box">
+    <h2>{{ config.title|default(config.defaultTitle) }}</h2>
+    {% if teacher %}
+    <div class="promot-teacher">
+
+      <a href="{{ path('user_show', {id:teacher.id}) }}" class="js-user-card" data-card-url="{{ path('user_card_show', {userId:teacher.id}) }}" data-user-id="{{ teacher.id }}" >{{ lazy_img(filepath(teacher.mediumAvatar, 'avatar.png'), 'img-circle avatar') }}</a>
+     
+      {{ web_macro.user_link(teacher,'nickname') }}
+
+      <span>{{ teacher.title }}</span>
+
+      <p>{{ teacher.about|plain_text(100) }}</p>
+      
+    </div>
+  {% else %}
+    <div class="empty">还没有推荐教师</div>
+{% endif %}
+</div>

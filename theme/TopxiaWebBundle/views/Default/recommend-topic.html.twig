@@ -1,0 +1,33 @@
+{% import "TopxiaWebBundle::macro.html.twig" as web_macro %}
+{# 话题 #}
+<div class="es-box group">
+  <h2>{{ config.title|default(config.defaultTitle) }}</h2>
+    {% set threads = data('CourseThreadsByType',{'count':config.count,'type':'discussion'}) %}
+    {% if threads %}
+    <ul>
+      {% for thread in threads %}
+        {% if thread %}
+          <li>
+            <div>
+              {% set user = thread.user %}       
+              {% set latestPostUser = thread.latestPostUser %}
+                {{ lazy_img(filepath(thread.user.mediumAvatar, 'avatar.png'), 'pull-left') }}
+              <h3>
+                <a href="{{ path('course_thread_show', {courseId:thread.courseId, threadId:thread.id}) }}">{{ thread.title|plain_text(28) }}</a>
+              </h3>
+              <span>{{ web_macro.user_link(user, 'text-muted') }}</span> 
+              <p>
+                <span>{{ web_macro.user_link(latestPostUser, 'text-muted') }}  </span>
+              {{ thread.latestPostTime|smart_time }}回复
+                <span class="pull-right"><a href="{{ path('course_show', {id:thread.course.id}) }}">{{ thread.course.title|plain_text(28) }}</a></span>
+              </p>
+              <span class="postnum">{{ thread.postNum }}</span>
+            </div>
+         </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    {% else %}
+            <div class="empty">还没有课程讨论</div>
+    {% endif %}
+</div>

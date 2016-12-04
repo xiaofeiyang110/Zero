@@ -1,0 +1,29 @@
+{% import "TopxiaWebBundle::macro.html.twig" as web_macro %}
+{% set reviews = data('LatestCourseReviews',{'count':config.count}) %}
+
+<div class="es-box comment">
+	<h2>{{ config.title|default(config.defaultTitle) }}</h2>
+	<ul>
+	{% if reviews %}
+
+	  {% for review in reviews %}
+	  {% set author = review.User|default(null) %}
+	  {% set course = review.course|default(null) %}
+	  {% if author and course %}
+	<li>
+		 
+		  	{{ web_macro.user_avatar(author,'pull-left','img-circle pull-left',true) }}
+			{{ web_macro.user_link(author,'com-author-link') }}
+			  
+			  :{{ review.content|plain_text(50) }}
+	
+		<p><a href="{{ path('course_show', {id:course.id}) }}"> {{ course.title|plain_text(9) }}</a><span class="pull-right stars-{{review.rating }}"></span></p>
+		 
+	</li>
+	{% endif %}
+	{% endfor %}
+	{% else %}
+	  <li class="empty">还没有评价</li>
+	{% endif %}
+	</ul>
+</div>
