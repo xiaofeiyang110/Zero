@@ -3,7 +3,7 @@
 {% block keywords %}{{ setting('site.seo_keywords') }}{% endblock %}
 {% block description %}{{ setting('site.seo_description') }}{% endblock %}
 
-{% set bodyClass = 'homepage' %}
+{% set bodyClass = 'zero' %}
 {% set siteNav = '/' %}
 {% set script_controller = 'theme/controller/index' %}
 {% set _target_path = path('homepage') %}
@@ -23,33 +23,653 @@
 {% block header %}
   {% include 'TopxiaWebBundle::site-hint.html.twig' %}
   {# {% include 'TopxiaWebBundle:Default:header.html.twig' %} #}
-  header<br/>
-  导航<br/>
-  banner<br/>
-  四图展示区<br/>
-  推荐课程<br/>
-  免费公开课<br/>
-  近期直播<br/>
-  学员评价<br/>
-  中部ｂａｎｎｅｒ<br/>
-  推荐班级<br/>
-  班级动态<br/>
-  会员详情<br/>
-  推荐老师<br/>
-  学员分享<br/>
-  中底部ｂａｎｎｅｒ<br/>
-  header<br/>
-  发展历程<br/>
-  热门咨询<br/>
-底部ｂａｎｎｅｒ<br/>
-footer<br/>
+  <header class="navbar">
+    <div class=" container">
+      <h1 class="logo">
+        <img class="img-responsive pull-left" src="themes/Zero/img/logo.png"　/>
+      </h1>
+      <div class="search pull-left">
+        <input />
+        <div class="tag">
+          <a href="">双十一</a>
+          <a href="">营销课程</a>          
+        </div>
+        <button class="button es-icon es-icon-search"></button>
+      </div>
+      <div class="login pull-right">
+        <a href="">登陆</a>
+        <a href="" class="register">注册</a>
+      </div>
+    </div>
+  </header>
 {% endblock %}
 
 {% block full_content %}
+<div class="category container">
+  <div class="list pull-left">
+    <div class="head text-lg">
+      <i class="es-icon es-icon-menu mrs"></i>
+      全部课程
+    </div>
+    <ul class="content">
+      <li>
+        <div class="title">
+          设计 & 艺术
+        </div>
+        <p><span>基础设计</span><span>色彩</span><span>构图</span></p>
+      </li>
+    </ul>
+  </div>
+  <ul class="navbar-nav">
+    <li>
+      <a href="">班级</a>
+    </li>
+    <li>  <a href="">直播学堂</a></li>
+     <li> <a href="">APP下载</a></li>
+    
+  </ul>
+</div>
+<div class="banner mbl">
+  <img class="img-responsive" src="http://www.ganlantu.com/files/system/2016/12-15/111123bc5304117024.jpg?7.3.5">
+</div>
+
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="http://tupian.enterdesk.com/2012/0629/xin/04/04.jpg" title="梦幻星空" alt="梦幻星空" class="img-responsive">
+    </div>
+    <div class="col-md-3">
+      <img src="http://tupian.enterdesk.com/2012/0629/xin/04/04.jpg" title="梦幻星空" alt="梦幻星空" class="img-responsive">
+    </div>
+    <div class="col-md-3">
+      <img src="http://tupian.enterdesk.com/2012/0629/xin/04/04.jpg" title="梦幻星空" alt="梦幻星空" class="img-responsive">
+    </div>
+    <div class="col-md-3">
+      <img src="http://tupian.enterdesk.com/2012/0629/xin/04/04.jpg" title="梦幻星空" alt="梦幻星空" class="img-responsive">
+    </div>
+  </div>
+</div>
+
+<div class="content container recommand-course">
+  <nav>
+    <h2 class="title pull-left">推荐课程</h2>
+    <ul class="clearfix">
+      <li class="active">
+        精品推荐
+      </li>
+      <li >
+        特价好课
+      </li>
+      <li>
+        摄影课堂
+      </li>
+      <li>
+        创意设计
+      </li>
+      <li>
+        兴趣爱好
+      </li>
+      <li>
+        声乐器乐
+      </li>
+    </ul>
+  </nav>
+  <div class="row clearfix act" id="course-commend4" style="display: block;">      
+    <div class="col-sm-3 col-xs-6">
+      <div class="course-item speical">
+        <div class="course-img">  
+          <a href="/course/13886/"> 
+          <img class="img-responsive" src="http://f1.howzhi.com/course/2016/07-29/174207f521af450302.jpg" alt="快速上手淘宝摄影教程">                       
+          </a>
+        </div>
+        <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+          <div class="teacher text-o-show">
+            <a class=" js-user-card" href="/u/1314678/" data-card-url="/user/1314678/card/show" data-user-id="1314678">
+               <img class="avatar-xxs" src="http://f1.howzhi.com/avatar/2014/12-14/212720870038390860.jpg" 　alt="一个小九">
+               Austin Kelly
+            </a>
+        <span class="daren-icon-t" title="达人"></span>
+        <div class="price pull-right"><span>￥99.00</span></div>
+        </div>
+        </div>
+      </div>
+    </div>      
+    <div class="col-sm-3 col-xs-6">
+      <div class="course-item">
+        <div class="course-img"> 
+          <a href="/course/14083/"> 
+            <img class="img-responsive" src="http://f1.howzhi.com/course/2016/09-01/1748557c9f1e999667.jpg" alt="AE子弹时间特效制作解密教程" class="">
+          </a>
+        </div>
+        <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+          <div class="teacher text-o-show">
+            <a class=" js-user-card" href="/u/2361898/" data-card-url="/user/2361898/card/show" data-user-id="2361898" data-original-title="" title="">
+              <img class="avatar-xxs" src="http://f1.howzhi.com/user/2016/08-31/0029128b8196044090.jpg" 　alt="woocg">
+              woocg
+            </a>
+            <div class="price free pull-right"><span>免费</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="course-item">
+          <div class="course-img"> 
+            <a href="/course/13867/"> 
+              <img class="img-responsive" src="http://f1.howzhi.com/course/2016/08-22/151403be9c71239127.jpg" alt="人民攻摄 零基础轻松搞定PS" >
+            </a>
+          </div>
+          <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+            <div class="teacher text-o-show">
+              <a class=" js-user-card" href="/u/2343104/" data-card-url="/user/2343104/card/show" data-user-id="2343104">
+                <img class="avatar-xxs" src="http://f1.howzhi.com/user/2016/07-13/173852cc4c2f638240.jpg" 　alt="人民攻摄">
+                人民攻摄
+              </a>  
+              <div class="price free pull-right"><span>免费</span></div>
+            </div>
+          </div>
+        </div>
+    </div>    
+    <div class="col-sm-3 col-xs-6">
+      <div class="course-item">
+        <div class="course-img"> 
+          <a href="/course/14083/"> 
+            <img class="img-responsive" src="http://f1.howzhi.com/course/2016/09-01/1748557c9f1e999667.jpg" alt="AE子弹时间特效制作解密教程" class="">
+          </a>
+        </div>
+        <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+          <div class="teacher text-o-show">
+            <a class=" js-user-card" href="/u/2361898/" data-card-url="/user/2361898/card/show" data-user-id="2361898" data-original-title="" title="">
+              <img class="avatar-xxs" src="http://f1.howzhi.com/user/2016/08-31/0029128b8196044090.jpg" 　alt="woocg">
+              woocg
+            </a>
+            <div class="price free pull-right"><span>免费</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="course-item">
+          <div class="course-img"> 
+            <a href="/course/13867/"> 
+              <img class="img-responsive" src="http://f1.howzhi.com/course/2016/08-22/151403be9c71239127.jpg" alt="人民攻摄 零基础轻松搞定PS" >
+            </a>
+          </div>
+          <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+            <div class="teacher text-o-show">
+              <a class=" js-user-card" href="/u/2343104/" data-card-url="/user/2343104/card/show" data-user-id="2343104">
+                <img class="avatar-xxs" src="http://f1.howzhi.com/user/2016/07-13/173852cc4c2f638240.jpg" 　alt="人民攻摄">
+                人民攻摄
+              </a>  
+              <div class="price free pull-right"><span>免费</span></div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+      <div class="course-item">
+        <div class="course-img"> 
+          <a href="/course/14083/"> 
+            <img class="img-responsive" src="http://f1.howzhi.com/course/2016/09-01/1748557c9f1e999667.jpg" alt="AE子弹时间特效制作解密教程" class="">
+          </a>
+        </div>
+        <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+          <div class="teacher text-o-show">
+            <a class=" js-user-card" href="/u/2361898/" data-card-url="/user/2361898/card/show" data-user-id="2361898" data-original-title="" title="">
+              <img class="avatar-xxs" src="http://f1.howzhi.com/user/2016/08-31/0029128b8196044090.jpg" 　alt="woocg">
+              woocg
+            </a>
+            <div class="price free pull-right"><span>免费</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="course-item">
+          <div class="course-img"> 
+            <a href="/course/13867/"> 
+              <img class="img-responsive" src="http://f1.howzhi.com/course/2016/08-22/151403be9c71239127.jpg" alt="人民攻摄 零基础轻松搞定PS" >
+            </a>
+          </div>
+          <div class="course-info">
+          <div class="title mvm">
+            <a href="/course/13886/" class="color-dark">快速上手淘宝摄影教程</a>
+          </div>
+            <div class="teacher text-o-show">
+              <a class=" js-user-card" href="/u/2343104/" data-card-url="/user/2343104/card/show" data-user-id="2343104">
+                <img class="avatar-xxs" src="http://f1.howzhi.com/user/2016/07-13/173852cc4c2f638240.jpg" 　alt="人民攻摄">
+                人民攻摄
+              </a>  
+              <div class="price free pull-right"><span>免费</span></div>
+            </div>
+          </div>
+        </div>
+    </div>   
+  </div>  
+</div>
+
+
+
+    <div class="content container open">
+        <h2 class="title">免费公开课<a href="">...</a></h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="cover">
+              <img class="img-responsive" src='themes/Zero/img/3.jpg'　/>
+              <div class="layer text-center">
+                <p class="">
+                  <img class="avatar-md" src="http://f1.howzhi.com/avatar/2013/01-20/2001255a2bbc776915.jpg">
+                </p>
+                <p class="">
+                  <strong>木桃</strong><br/>
+                  人脸识别专家
+                </p>
+                <div class="info">
+                  “如何利用新技术进行人脸识别”
+                </div>
+              </div>
+            </div>
+            <div class="title text-lg pts mtm color-dark phs">
+              手机摄影：给手机带上墨镜 <span class="pull-right">236人参与</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cover">
+              <img class="img-responsive" src='themes/Zero/img/3.jpg'　/>
+              <div class="layer text-center">
+                <p class="">
+                  <img class="avatar-md" src="http://f1.howzhi.com/avatar/2013/01-20/2001255a2bbc776915.jpg">
+                </p>
+                <p class="">
+                  <strong>木桃</strong><br/>
+                  人脸识别专家
+                </p>
+                <div class="info">
+                  “如何利用新技术进行人脸识别”
+                </div>
+              </div>
+            </div>
+            <div class="title text-lg pts mtm color-dark phs">
+              手机摄影：给手机带上墨镜 <span class="pull-right">236人参与</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cover">
+              <img class="img-responsive" src='themes/Zero/img/3.jpg'　/>
+              <div class="layer text-center">
+                <p class="">
+                  <img class="avatar-md" src="http://f1.howzhi.com/avatar/2013/01-20/2001255a2bbc776915.jpg">
+                </p>
+                <p class="">
+                  <strong>木桃</strong><br/>
+                  人脸识别专家
+                </p>
+                <div class="info">
+                  “如何利用新技术进行人脸识别”
+                </div>
+              </div>
+            </div>
+            <div class="title text-lg pts mtm color-dark phs">
+              手机摄影：给手机带上墨镜 <span class="pull-right">236人参与</span>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="content container living">
+        <h2 class="title">近期直播<a href="">...</a></h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="cover">
+              <img class="img-responsive" src='themes/Zero/img/3.jpg'　/>
+              <div class="info">
+                <span class="pull-left mlm">直播时间：2016 /12/14  8:00</span>
+                <span class="btn pull-right">立即预约</span>
+              </div>
+              <div class="layer">
+                <p class="text-center">
+                  <img class="avatar-md" src="http://f1.howzhi.com/avatar/2013/01-20/2001255a2bbc776915.jpg">
+                </p>
+                <p class="text-center">
+                  <strong>木桃</strong><br/>
+                  人脸识别专家
+                </p>
+                <div class="info">
+                  <p class="avatar">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2016/12-31/21384447c8f6060068.jpg" alt="逐道">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2016/12-31/2256204d5992277810.jpg" alt="少年小生">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2017/01-01/0959357abafb747369.jpg" alt="樱殇">
+                    <span>…</span>
+                    <span class="pull-right">512人已加入课程</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="title text-lg pts mtm color-dark phs">
+              手机摄影：给手机带上墨镜
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cover">
+              <img class="img-responsive" src='themes/Zero/img/3.jpg'　/>
+              <div class="info">
+                <span class="pull-left mlm ">直播时间：2016 /12/14  8:00</span>
+                <span class="btn pull-right">立即预约</span>
+              </div>
+              <div class="layer">
+                <p class="text-center">
+                  <img class="avatar-md" src="http://f1.howzhi.com/avatar/2013/01-20/2001255a2bbc776915.jpg">
+                </p>
+                <p class="text-center">
+                  <strong>木桃</strong><br/>
+                  人脸识别专家
+                </p>
+                <div class="info">
+                  <p class="avatar">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2016/12-31/21384447c8f6060068.jpg" alt="逐道">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2016/12-31/2256204d5992277810.jpg" alt="少年小生">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2017/01-01/0959357abafb747369.jpg" alt="樱殇">
+                    <span>…</span>
+                    <span class="pull-right">512人已加入课程</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="title text-lg pts mtm color-dark phs">
+              手机摄影：给手机带上墨镜
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cover">
+              <img class="img-responsive" src='themes/Zero/img/3.jpg'　/>
+              <div class="info">
+                <span class="pull-left mlm">直播时间：2016 /12/14  8:00</span>
+                <span class="btn pull-right">直播中..</span>
+              </div>
+              <div class="layer">
+                <p class="text-center">
+                  <img class="avatar-md" src="http://f1.howzhi.com/avatar/2013/01-20/2001255a2bbc776915.jpg">
+                </p>
+                <p class="text-center">
+                  <strong>木桃</strong><br/>
+                  人脸识别专家
+                </p>
+                <div class="info">
+                  <p class="avatar">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2016/12-31/21384447c8f6060068.jpg" alt="逐道">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2016/12-31/2256204d5992277810.jpg" alt="少年小生">
+                    <img class="avatar-xxs" src="http://f1.howzhi.com/default/2017/01-01/0959357abafb747369.jpg" alt="樱殇">
+                    <span>…</span>
+                    <span class="pull-right">512人已加入课程</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="title text-lg pts mtm color-dark phs">
+              手机摄影：给手机带上墨镜
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="ad">
+    </div>
+    <div class="content container classroom">
+        <h2 class="title">推荐班级<a href="">...</a></h2>
+        <div class="row">
+          <div class="col-md-3">
+            <img class="img-responsive" src='themes/Zero/img/22.jpg'　/>
+            <h3 class="title mvm text-md">如何运营一所网校</h3>
+            <div class="intro text-xs mbm color-gray">
+              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
+            </div>
+            <a class="btn" href="">
+              立即加入
+            </a>
+          </div>
+          <div class="col-md-3">
+            <img class="img-responsive" src='themes/Zero/img/7.jpg'　/>
+            <h3 class="title mvm text-md">如何运营一所网校</h3>
+            <div class="intro text-xs mbm color-gray">
+              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
+            </div>
+            <a class="btn" href="">
+              立即加入
+            </a>
+          </div>
+          <div class="col-md-3">
+            <img class="img-responsive" src='themes/Zero/img/22.jpg'　/>
+            <h3 class="title mvm text-md">如何运营一所网校</h3>
+            <div class="intro text-xs mbm color-gray">
+              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
+            </div>
+            <a class="btn" href="">
+              立即加入
+            </a>
+          </div>
+          <div class="col-md-3">
+            <img class="img-responsive" src='themes/Zero/img/7.jpg'　/>
+            <h3 class="title mvm text-md">如何运营一所网校</h3>
+            <div class="intro text-xs mbm color-gray">
+              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
+            </div>
+            <a class="btn" href="">
+              立即加入
+            </a>
+          </div>
+        </div>
+    </div>
+
+    <div class="content container vip">
+        <h2 class="title">会员详情<a href="">...</a></h2>
+        <div class="row">
+          <div class="col-md-4">
+              <div class="info">
+                <div class="clearfix">
+                    <img class='img-responsive' src='themes/Zero/img/vip1.png'　/>
+                    <div class="name mbs">年费会员</div>
+                    <div class="num">
+                        课程数量：234 / 班级数：2
+                    </div>
+                    <div class="price mts"><span>699.00</span>元/月</div>
+                </div>
+                  <div class="detail mtm">
+                      原价999元/年，现在只需要699元/年！500+课程，每周更新，看网站所有年费课程，平均一天不到2元就可以学习。
+                  </div>
+                  <a href="#" class="text-center">立即购买</a>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="info">
+                <div class="clearfix">
+                    <img class='img-responsive' src='themes/Zero/img/vip2.png'　/>
+                    <div class="name mbs">年费会员</div>
+                    <div class="num">
+                        课程数量：234 / 班级数：2
+                    </div>
+                    <div class="price mts"><span>699.00</span>元/月</div>
+                </div>
+                  <div class="detail mtm">
+                      原价999元/年，现在只需要699元/年！500+课程，每周更新，看网站所有年费课程，平均一天不到2元就可以学习。
+                  </div>
+                  <a href="#" class="text-center">立即购买</a>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="info">
+                <div class="clearfix">
+                    <img class='img-responsive' src='themes/Zero/img/vip3.png'　/>
+                    <div class="name mbs">年费会员</div>
+                    <div class="num">
+                        课程数量：234 / 班级数：2
+                    </div>
+                    <div class="price mts"><span>699.00</span>元/月</div>
+                </div>
+                  <div class="detail mtm">
+                      原价999元/年，现在只需要699元/年！500+课程，每周更新，看网站所有年费课程，平均一天不到2元就可以学习。
+                  </div>
+                  <a href="#" class="text-center">立即购买</a>
+              </div>
+          </div>          
+        </div>
+    </div>
+
+    <div class="content container teacher">
+      <h2 class="title">推荐老师<a href="">...</a></h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="item clearfix">
+            <img class='img-responsive' src='themes/Zero/img/5.jpg'　/>
+            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
+            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
+            <div class="focus">
+                <span>关注</span>
+                <span>私信</span>
+            </div>
+          </div>
+        </div>  
+        <div class="col-md-6">
+          <div class="item clearfix">
+            <img class='img-responsive' src='themes/Zero/img/9.jpg'　/>
+            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
+            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
+            <div class="focus">
+                <span>关注</span>
+                <span>私信</span>
+            </div>
+          </div>
+        </div>  
+        <div class="col-md-6">
+          <div class="item clearfix">
+            <img class='img-responsive' src='themes/Zero/img/10.jpg'　/>
+            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
+            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
+            <div class="focus">
+                <span>关注</span>
+                <span>私信</span>
+            </div>
+          </div>
+        </div>  
+        <div class="col-md-6">
+          <div class="item clearfix">
+            <img class='img-responsive' src='themes/Zero/img/11.jpg'　/>
+            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
+            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
+            <div class="focus">
+                <span>关注</span>
+                <span>私信</span>
+            </div>
+          </div>
+        </div>         
+      </div>
+    </div>
+
+    <div class="about">
+      <div class="cover">
+        <div class="container text-center">
+          <h2>关于EduSoho</h2>
+          <div class="row">
+              <div class="col-md-3">
+                <p><span class="num">324</span>节</p>
+                <p class="text-xlg">优质课程</p>
+              </div>
+              <div class="col-md-3">
+                <p><span class="num">3240</span><span class="add">+</span>分钟</p>
+                <p class="text-xlg">视频时长</p>
+              </div>
+              <div class="col-md-3">
+                <p><span class="num">3240</span><span class="add">+</span></p>
+                <p class="text-xlg">网校学员</p>
+              </div>
+              <div class="col-md-3">
+                <p><span class="num">536</span>条</p>
+                <p class="text-xlg">交流话题</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content container hot-news">
+        <h2 class='title'>
+            热门资讯 <a href=""><i class="fa fa-ellipsis-h" aria-hidden="true"></i><span>更多资讯</span></a>
+        </h2>
+        <div class="row">
+          <div class="col-md-3">
+              <img class='img-responsive' src='themes/Zero/img/7.jpg'　/>
+              <p>如何运营一所网校哇</p>
+          </div>
+          <div class="col-md-3">
+              <img class='img-responsive' src='themes/Zero/img/22.jpg'　/>
+              <p>如何运营一所网校哇</p>       
+          </div>
+          <div class="col-md-3">
+              <img class='img-responsive' src='themes/Zero/img/17.jpg'　/>
+              <p>如何运营一所网校哇</p>            
+          </div>
+          <div class="col-md-3">
+              <img class='img-responsive' src='themes/Zero/img/18.jpg'　/>
+              <p>如何运营一所网校哇</p>    
+          </div>
+        </div>
+    </div>
+
+    <div class="bottom-banner text-center">
+        <div class="cover">
+          <h5>从0开始，助您打造一所品牌网校</h5>
+          <a href="">立即咨询</a>
+        </div>
+    </div>
 
 {% endblock %}
 
 {% block footer %}
-  {# {% include 'TopxiaWebBundle:Default:footer.html.twig' %} #}
-  底部
+    <footer class="connect">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-responsive" src="themes/Zero/img/logo.png"　/>
+            </div>
+            <div class="col-md-6 link">
+                <a href="">关于我们</a>
+                <a href="">加入我们</a>
+                <a href="">合作申请</a>
+                <a href="" class="noborder">意见反馈</a>
+            </div>
+            <div class="col-md-3">
+                <div class="call mbl">
+                    <i class="es-icon es-icon-weixin"></i>
+                    howzhi123
+                </div>
+                <div class="call">
+                    <i class="es-icon es-icon-phone"></i>
+                    0573-23342434
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="frind-link">
+        <div class="container">
+          <span>友情链接:</span>
+          <a href='' target ="_blank">EduSoho开源网络课堂</a><a href='' target ="_blank">气球鱼学员</a>
+          <a href='' target ="_blank">好知网</a>
+          <a href='' target ="_blank">好知网</a>
+          <a href='' target ="_blank" class="noborder">好知网</a>
+        </div>
+      </div>        
+    </footer>
 {% endblock %}
