@@ -662,13 +662,12 @@
             </div>
         </div>
       </div>
+
       <div class="frind-link">
         <div class="container">
           <span>友情链接:</span>
-          <a href='' target ="_blank">EduSoho开源网络课堂</a><a href='' target ="_blank">气球鱼学员</a>
-          <a href='' target ="_blank">好知网</a>
-          <a href='' target ="_blank">好知网</a>
-          <a href='' target ="_blank" class="noborder">好知网</a>
+            {% set frindlyLinks = data('Navigation',{ 'type' : 'friendlyLink' })  %}
+            {% for frindlyLink in frindlyLinks if frindlyLink.isOpen == 1 %}<a href='{{ frindlyLink.url }}' {% if frindlyLink.isNewWin == 1 %} target ="_blank" {% endif %}>{{ frindlyLink.name }}</a>{% endfor %}
         </div>
       </div>        
     </footer>
