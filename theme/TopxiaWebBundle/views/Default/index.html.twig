@@ -428,52 +428,26 @@
 
     <div class="ad">
     </div>
-    <div class="content container classroom">
-        <h2 class="title">推荐班级<a href="">...</a></h2>
-        <div class="row">
-          <div class="col-md-3">
-            <img class="img-responsive" src='themes/Zero/img/22.jpg'　/>
-            <h3 class="title mvm text-md">如何运营一所网校</h3>
-            <div class="intro text-xs mbm color-gray">
-              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
+    {% set recommendedClassroom =  data('Classrooms', {recommended: 1,count:4}) %}
+    {% if recommendedClassroom %}
+      <div class="content container classroom">
+          <h2 class="title">推荐班级<a href="{{ path('classroom_explore',{orderBy:'recommendedSeq'}) }}">...</a></h2>
+          <div class="row">
+          {% for classroom in recommendedClassroom %}
+            <div class="col-md-3">
+              <img class="img-responsive" src="{{ filepath(classroom.middlePicture,'classroom.png') }}"　/>
+              <h3 class="title mvm text-md">{{ classroom.title }}</h3>
+              <div class="intro text-xs mbm color-gray">
+                {{ classroom.about | purify_and_trim_html }}
+              </div>
+              <a class="btn" href="{{ path('classroom_show',{id:classroom.id}) }}">
+                立即加入
+              </a>
             </div>
-            <a class="btn" href="">
-              立即加入
-            </a>
+          {% endfor %}
           </div>
-          <div class="col-md-3">
-            <img class="img-responsive" src='themes/Zero/img/7.jpg'　/>
-            <h3 class="title mvm text-md">如何运营一所网校</h3>
-            <div class="intro text-xs mbm color-gray">
-              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
-            </div>
-            <a class="btn" href="">
-              立即加入
-            </a>
-          </div>
-          <div class="col-md-3">
-            <img class="img-responsive" src='themes/Zero/img/22.jpg'　/>
-            <h3 class="title mvm text-md">如何运营一所网校</h3>
-            <div class="intro text-xs mbm color-gray">
-              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
-            </div>
-            <a class="btn" href="">
-              立即加入
-            </a>
-          </div>
-          <div class="col-md-3">
-            <img class="img-responsive" src='themes/Zero/img/7.jpg'　/>
-            <h3 class="title mvm text-md">如何运营一所网校</h3>
-            <div class="intro text-xs mbm color-gray">
-              Photoshop不仅能对Max渲染的效果图进行后期调节,给Max提供修整贴图；还可以制作彩平……
-            </div>
-            <a class="btn" href="">
-              立即加入
-            </a>
-          </div>
-        </div>
-    </div>
-
+      </div>
+    {% endif %}
     <div class="content container vip">
         <h2 class="title">会员详情<a href="">...</a></h2>
         <div class="row">
