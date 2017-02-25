@@ -502,55 +502,29 @@
         </div>
     </div>
 
-    <div class="content container teacher">
-      <h2 class="title">推荐老师<a href="">...</a></h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="item clearfix">
-            <img class='img-responsive' src='themes/Zero/img/5.jpg'　/>
-            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
-            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
-            <div class="focus">
-                <span>关注</span>
-                <span>私信</span>
+    {% set recommendTeachers = data('RecommendTeachers',{count:4}) %}
+    {% if recommendTeachers %}
+        <div class="content container teacher">
+        <h2 class="title">推荐老师<a href="{{ path('teacher') }}">...</a></h2>
+        <div class="row">
+        {% for teacher in recommendTeachers %}
+          <div class="col-md-6">
+            <div class="item clearfix">
+              <img class='img-responsive' src="{{ filepath(teacher.mediumAvatar,'avatar.png') }}"　/>
+              <div class="name gray-darker">{{ teacher.nickname }}<span class='plm'>{{ teacher.title }}</span></div>
+              <div class="intr">{{ teacher.profile.about | purify_and_trim_html  }}</div>
+              <div class="focus">
+                  <span >关注</span>
+                  <span data-toggle="modal" data-target="#modal" data-url="{{path('message_create', {toId:teacher.id})}}">私信</span>
+              </div>
             </div>
-          </div>
-        </div>  
-        <div class="col-md-6">
-          <div class="item clearfix">
-            <img class='img-responsive' src='themes/Zero/img/9.jpg'　/>
-            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
-            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
-            <div class="focus">
-                <span>关注</span>
-                <span>私信</span>
-            </div>
-          </div>
-        </div>  
-        <div class="col-md-6">
-          <div class="item clearfix">
-            <img class='img-responsive' src='themes/Zero/img/10.jpg'　/>
-            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
-            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
-            <div class="focus">
-                <span>关注</span>
-                <span>私信</span>
-            </div>
-          </div>
-        </div>  
-        <div class="col-md-6">
-          <div class="item clearfix">
-            <img class='img-responsive' src='themes/Zero/img/11.jpg'　/>
-            <div class="name gray-darker">吴徐<span class='plm'>设计总监</span></div>
-            <div class="intr">平面设计师，资深平面设计讲师，哈尔滨工业大学 视觉传达专业，曾任清华大学国培部讲师、北京化工大学艺术学院讲师、学承电脑平面设计专业主管、牡丹江大学艺术系讲师。</div>
-            <div class="focus">
-                <span>关注</span>
-                <span>私信</span>
-            </div>
-          </div>
-        </div>         
+          </div>  
+        {% endfor %}
+         
+                
+        </div>
       </div>
-    </div>
+    {% endif %}
 
     <div class="about">
       <div class="cover">
